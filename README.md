@@ -1,30 +1,43 @@
-# oculusdobotcontrol
-This project integrates a Dobot V1 with an Oculus Quest 1 using the Oculus Reader repo from RAIL Berkeley (https://github.com/rail-berkeley/oculus_reader/tree/main/oculus_reader), allowing the control of its coordinates and the opening and closing of the suction pump
+# OculusDobotControl
 
-It is designed to work on the very first Dobot robotic arm model which used the beta protocol. This protocol was later changed and is used in newer models such as the Magician. These are much simpler to operate, as all you have to do is to use the pydobot library found at https://pypi.org/project/pydobot/. This code shows how to import it, but uses regular serial commands to control the dobot: you can edit it to simply use the commands from the pydobot library (much easier!)
+## Overview
 
-You will need to find what port is the Dobot using: a simple way is just typing "dir /dev/tty*" with and without the dobot connected and seeing which port shows up. Then replace that text for the "/dev/ttyACM0" found in this file
+This project facilitates the integration of a Dobot V1 robotic arm with an Oculus Quest 1 headset using the Oculus Reader repository from RAIL Berkeley (https://github.com/rail-berkeley/oculus_reader/tree/main/oculus_reader). It enables control over the robotic arm's coordinates and the operation of the suction pump.
 
-**INSTRUCTIONS**
+The system is specifically designed for the original Dobot robotic arm model, which utilizes the beta protocol. This protocol has since been updated in newer models such as the Dobot Magician, which simplifies operation through the use of the `pydobot` library available at https://pypi.org/project/pydobot/. While this code demonstrates basic serial command control, it can be adapted to utilize the more user-friendly `pydobot` library commands.
 
-1 - Install the git-lfs tool as instructed at the repo RAIL Berkeley (https://github.com/rail-berkeley/oculus_reader/tree/main/oculus_reader). This is CRITICAL, as if otherwise when you clone the repo it will not bring a required APK
+To identify the appropriate port for the Dobot, execute the command `dir /dev/tty*` with and without the Dobot connected, and observe which port appears. Replace "/dev/ttyACM0" in the code with the correct port identifier.
 
-2 - Clone the Oculus Reader repo from RAIL Berkeley (https://github.com/rail-berkeley/oculus_reader/tree/main/oculus_reader)
+## Instructions
 
-3 - Follow the instruction of the repo in terms of installing ADB, creating a development organization at Meta's website, setting up the oculus to developer mode, and allowing it to connect to your computer
+1. **Install Git Large File Storage (LFS)**: Follow the instructions provided in the RAIL Berkeley repository (https://github.com/rail-berkeley/oculus_reader/tree/main/oculus_reader). This step is critical as failing to install Git LFS will prevent the required APK from being cloned.
 
-3 - Add the file novoreader.py of this repo to the oculus_reader/oculus_reader folder of the Oculus Reader repo and run it. You can also run the original file reader.py to just use the Oculus
+2. **Clone the Oculus Reader Repository**: Clone the repository from RAIL Berkeley (https://github.com/rail-berkeley/oculus_reader/tree/main/oculus_reader).
 
-4 - This file will detect if ADB is installed and running (otherwise will start a daemon), if the oculus is responding, and will install an APK in the oculus to read the commands from the oculus headset and handsets. You will see in the Oculus the RAIL Oculus Teleoperation program running (see printscreen)
+3. **Setup Oculus and ADB**:
+   - Install Android Debug Bridge (ADB) as per the repository instructions.
+   - Create a developer account on Meta’s website.
+   - Set the Oculus headset to Developer Mode and enable connectivity with your computer.
 
-5 - You will notice that unless you keep the headset on, it will stop receive commands. To prevent it, do NOT use the technique of simply putting a piece of tape on the internal oculus sensor, as it just confuses it. Instead, install Sidequest in your computer and go to "Device Settings and Tools", and click on "Disable proximity sensor". This is the most foolproof method (others such as one that uses the oculus software do not stay put). See the attached picture
+4. **Add and Run the Script**:
+   - Place the `novoreader.py` file from this repository into the `oculus_reader/oculus_reader` directory of the Oculus Reader repository and execute it. Alternatively, you may run the original `reader.py` file to use the Oculus headset without the added Dobot control functionality.
 
-6 - You can use now the left handset's joystick to control the X and Y axis of the dobot and the right handset's joystick to control the Z and rotation axis, and the left handset's trigger button to open and close the suction pump
+5. **Verify and Configure ADB**:
+   - The script will check for ADB installation, initiate a daemon if necessary, confirm Oculus responsiveness, and install an APK on the Oculus headset to facilitate command reading from the headset and controllers. The RAIL Oculus Teleoperation program should appear on the Oculus (see screenshot).
 
+6. **Prevent Oculus Headset Sleep Mode**:
+   - To maintain continuous command reception, avoid using tape on the internal Oculus sensor, as it may cause malfunctions. Instead, install Sidequest on your computer, navigate to "Device Settings and Tools," and select "Disable proximity sensor" to reliably prevent the headset from going to sleep (refer to the attached picture).
 
-**TO DO**<br>
-1 - This file does not use the last_transforms read by the repo, only the buttons. That means that head and controller tracking data are simply ignored. It'd be interesting to control the dobot by, for example, moving the head
+7. **Control the Dobot**:
+   - Use the left controller's joystick to adjust the Dobot's X and Y axes, the right controller's joystick for the Z axis and rotation, and the left controller's trigger button to control the suction pump.
 
-2 - The x,y,z,r calculations are really simple: the code simply obtains the initial position of the robot and adds or substracts the x,y,z,r variables accordingly. 
+## Future Enhancements
 
-3 - Reinforcement learning: it'd be useful if the movements were stored in order to train a model to later replicate it in, for example, picking up an orange and dropping it in a box
+1. **Enhanced Tracking**:
+   - The current implementation does not utilize the `last_transforms` data provided by the repository, which means head and controller tracking data are not utilized. Incorporating these features could enable control of the Dobot through head movements.
+
+2. **Improved Calculation Methods**:
+   - The current method for calculating X, Y, Z, and rotation values is rudimentary, simply modifying the robot's initial position based on the joystick inputs. More sophisticated methods could be developed for better precision and control.
+
+3. **Reinforcement Learning**:
+   - Implementing reinforcement learning could be beneficial for storing movement patterns and training models to replicate complex tasks, such as picking up objects and placing them in designated locations.
