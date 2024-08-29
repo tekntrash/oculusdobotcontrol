@@ -5,7 +5,8 @@ It is designed to work on the very first Dobot robotic arm model which used the 
 
 You will need to find what port is the Dobot using: a simple way is just typing "dir /dev/tty*" with and without the dobot connected and seeing which port shows up. Then replace that text for the "/dev/ttyACM0" found in this file
 
-INSTRUCTIONS
+**INSTRUCTIONS**
+
 1 - Install the git-lfs tool as instructed at the repo RAIL Berkeley (https://github.com/rail-berkeley/oculus_reader/tree/main/oculus_reader. This is CRITICAL, as if otherwise when you clone the repo it will not bring a required APK
 
 2 - Clone the Oculus Reader repo from RAIL Berkeley (https://github.com/rail-berkeley/oculus_reader/tree/main/oculus_reader
