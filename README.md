@@ -21,4 +21,6 @@ INSTRUCTIONS
 6 - You can use now the left handset's joystick to control the X and Y axis of the dobot and the right handset's joystick to control the Z and rotation axis, and the left handset's trigger button to open and close the suction pump
 
 TO DO:
-1 - This file does not use the last_transforms read by the repo, only the buttons. That means that head and controller tracking data are simply ignored. It'd be cool to control the dobot by, for example, moving the head
+1 - This file does not use the last_transforms read by the repo, only the buttons. That means that head and controller tracking data are simply ignored. It'd be interesting to control the dobot by, for example, moving the head
+2 - The x,y,z,r calculations are really simple: the code simply obtains the initial position of the robot and adds or substracts the x,y,z,r variables accordingly. 
+3 - Reinforcement learning: it'd be useful if the movements were stored in order to train a model to later replicate it in, for example, picking up an orange and dropping it in a box
