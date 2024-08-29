@@ -13,7 +13,7 @@ You will need to find what port is the Dobot using: a simple way is just typing 
 
 3 - Follow the instruction of the repo in terms of installing ADB, creating a development organization at Meta's website, setting up the oculus to developer mode, and allowing it to connect to your computer
 
-3 - Add the file novoreader.py of this repo to the oculus_reader/oculus_reader folder of the Oculus Reader repo and run it
+3 - Add the file novoreader.py of this repo to the oculus_reader/oculus_reader folder of the Oculus Reader repo and run it. You can also run the original file reader.py to just use the Oculus
 
 4 - This file will detect if ADB is installed and running (otherwise will start a daemon), if the oculus is responding, and will install an APK in the oculus to read the commands from the oculus headset and handsets. You will see in the Oculus the RAIL Oculus Teleoperation program running (see printscreen)
 
