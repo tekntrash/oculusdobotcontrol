@@ -14,7 +14,7 @@ INSTRUCTIONS
 
 3 - Add the file novoreader.py of this repo to the oculus_reader/oculus_reader folder of the Oculus Reader repo and run it
 
-4 - This file will detect if ADB is installed and running (otherwise will start a daemon), if the oculus is responding, and will install an APK in the oculus to read the commands from the oculus headset and handsets 
+4 - This file will detect if ADB is installed and running (otherwise will start a daemon), if the oculus is responding, and will install an APK in the oculus to read the commands from the oculus headset and handsets. You will see in the Oculus the RAIL Oculus Teleoperation program running (see printscreen)
 
 5 - You will notice that unless you keep the headset on, it will stop receive commands. To prevent it, do NOT use the technique of simply putting a piece of tape on the internal oculus sensor, as it just confuses it. Instead, install Sidequest in your computer and go to "Device Settings and Tools", and click on "Disable proximity sensor". This is the most foolproof method (others such as one that uses the oculus software do not stay put). See the attached picture
 
