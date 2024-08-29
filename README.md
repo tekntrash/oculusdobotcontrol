@@ -18,11 +18,4 @@ INSTRUCTIONS
 
 5 - You will notice that unless you keep the headset on, it will stop receive commands. To prevent it, do NOT use the technique of simply putting a piece of tape on the internal oculus sensor, as it just confuses it. Instead, install Sidequest in your computer and go to "Device Settings and Tools", and click on "Disable proximity sensor". This is the most foolproof method (others such as one that uses the oculus software do not stay put)
 
-
-@misc{OrbikEbert2021OculusReader,
-  author = {Jedrzej Orbik, Frederik Ebert},
-  title = {Oculus Reader: Robotic Teleoperation Interface},
-  year = {2021},
-  url = {https://github.com/rail-berkeley/oculus_reader},
-  note = {Accessed: YYYY-MM-DD}
-}
+6 - You can use now the left handset's joystick to control the X and Y axis of the dobot and the right handset's joystick to control the Z and rotation axis, and the left handset's trigger button to open and close the suction pump
